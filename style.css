@@ -1,0 +1,366 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{ 
+    --header-height: 50px;
+    width: 100%;
+    margin: var(--header-height) 0 0 0;
+    font-family: sans-serif; 
+    background: #ebedee;
+}
+
+.preload * {
+    transition: none !important;
+}
+
+@media screen and (min-width:350px){
+
+    .header{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: var(--header-height);
+        background: #0f1f1f;
+        display: flex;
+    }
+
+    .headerBtn{
+        width: var(--header-height);
+        flex-shrink: 0;
+        background: none;
+        outline: none;
+        border: none;
+        color: aliceblue;
+        cursor: pointer;
+    
+    }
+    
+
+    .navLinks{
+        position: fixed;
+        top:0;
+        left: 0;
+        z-index: 2;
+        height: 100vh;
+        width: 250px;
+        background: #e7eff3;
+        transform: translateX(-250px);
+        transition: transform 0.3s;
+    }
+
+    .nav--open .navLinks{
+        transform: translateX(0);
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .navLink{
+        display: flex;
+        align-items: center;
+        color: #0f1f1f;
+        font-weight: bold;
+        font-size: 14px;
+        text-decoration: none;
+        padding: 12px 15px;
+        background: transform 0.2s;
+    }
+
+    .navLink > i{
+        margin-right: 15px;
+        
+    }
+
+    .navLink:active{
+        color: rgb(7, 95, 95);
+        background: rgb(217, 219, 245);
+    }
+
+    .navLink:hover{
+        background: rgb(217, 219, 245);
+    }
+
+    .navOverlay{
+        position:fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(2px);
+        visibility: hidden; /*can't interact with the page if it's off */
+        opacity: 0;
+        transition: opacity 0.3s;
+    
+    }
+
+    .nav--open .navOverlay{
+        visibility: visible;
+        opacity: 1;
+    
+    }
+
+    main{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        margin: auto;
+        /* background-color: rgb(216, 143, 143); */
+    }
+
+    .homemain{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        place-items: center;
+        width: 100%;
+        padding: auto;
+    }
+    
+    .myImage{
+        margin: 1rem auto auto auto;
+        width: 100%;
+        display: flex;
+        /* flex-direction: column; */
+        /* justify-content: center; */
+        /* align-items: center; */
+        /* place-items: center; */
+    }
+    
+    .pic{
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        margin: auto;
+    }
+        
+        
+    .name{
+        display: flex;
+        width: 100%;
+        margin: 0.9rem;
+        flex-direction: column;
+        justify-content: center;
+        place-items: center;
+        font-size: large;
+        font-family: sans-serif;
+        /* background-color: #f0ff00; */
+        border-radius: 6px;
+        
+    }
+    
+    
+    .name h3{
+        display: block;
+        justify-content: center;
+        place-content: center;
+        text-align: center;
+        width: 90%;
+        font-size: 30px;
+        margin-bottom: 1rem;
+        font-family: 'Nunito', sans-serif;
+        font-weight: 400;
+        color: #064851;
+        
+        
+    }
+    
+    .name p{
+        display: flex;
+        place-content: center;
+        width: 90%;
+        text-align: justify;
+        font-size: smaller;
+        font-weight: 400;
+        margin-bottom: 1rem;
+        font-family: 'Nunito', sans-serif;
+        color: #064851;
+    }
+    
+    .btn{
+        display: none;
+    }
+    
+    .portfoliobtn{
+        display: none;
+    }
+      
+    
+    .aboutme{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        /* height: 300px; */
+        justify-content: center;
+        place-items: center;
+        margin-bottom: 20px;
+
+        color: #064851;
+
+    }
+
+    .aboutmeh2{
+        font-weight: 400;
+        font-family: 'Nunito', sans-serif;
+        color: #064851;
+    }
+    
+    
+    .aboutme p{
+        display: flex;
+        place-content: center;
+        width: 90%;
+        text-align: justify;
+        font-size: smaller;
+        margin-bottom: 1rem;
+        font-family: 'Nunito', sans-serif;
+        font-weight: 400;
+
+        color: #064851;
+    }
+
+        
+    .portfolioh2{
+        display: flex;
+        justify-content: center;
+        font-family: 'Nunito' sans-serif;
+        font-weight: 400;
+        margin-bottom: 20px;
+        background-color: #1d4483;
+        
+    }
+
+    .portmain{
+        display: flex;
+        gap: 0.5em;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        
+        
+    
+    } 
+
+
+    .portcard{
+        display: flex;     
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        width: 48%;
+        background-color: rgb(233, 177, 140) ;
+        border-radius: 10pt;
+        margin-top: 1pt;
+        /* padding: 1pt; */
+    }
+    
+    .imgcard{
+        display: flex;
+        justify-content: center;
+        place-content: center;
+        align-items: center;
+        margin: 5pt 0.5pt 20pt 1pt;
+        width: 98%;
+        height: 50%;
+        border-radius: 5pt;
+    }
+
+    .writeup h3{
+        color: rgb(77, 75, 75);
+        margin-bottom: 20pt;
+
+    }
+
+    .writeup p{
+        width:155px;
+        margin-bottom: 20pt;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        color: rgb(85, 83, 83);
+    }
+
+    .break{
+        flex-basis: 100%;
+        height: 0; 
+    }
+
+    .btn3{
+        
+        border-radius: 30pt;
+        width: 10em;
+        height: 20pt;
+        margin-bottom: 5pt;
+        border: none;
+        background-color: rgb(253, 185, 165) ;
+        transition-duration: 0.5s;
+    }
+
+    .btn3:hover{
+        background-color: blanchedalmond;
+    }
+
+
+    
+    
+    .contactMain{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        place-items: center;
+        margin: 90px 0 0 0;
+        
+    }
+
+    .contactMain h2{
+        font-family: 'Nunito' sans-serif;
+        font-weight: 400;
+    }
+    
+    .formdiv{
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        place-items: center;
+        background-color: rgb(233, 177, 140) ;
+        border-radius: 10px;
+        height: 300px;
+    }
+
+    .contactform{
+        display: flex;
+        flex-direction: column;
+        width: 22rem;
+        height: 18rem;
+    }
+    
+    .forminput{
+        height: 3rem;
+        width: 100%;
+        margin-top: 10px;
+
+        border-radius: 5pt;
+
+        border: none;
+        
+        
+    }
+    
+    .writeme{
+        height: 10rem;
+    }
+    
+    .sendbtn{
+        width: 22rem;
+        border-radius: 5pt;
+    }
+}
